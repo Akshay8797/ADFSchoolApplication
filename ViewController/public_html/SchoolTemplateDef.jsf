@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>SchoolTemplateDef</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>BodyFacet</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>PageTitle</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+    <af:panelSplitter orientation="vertical" splitterPosition="80" id="pt_ps1">
+        <f:facet name="first">
+            <af:panelGridLayout id="pt_pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
+                    <af:gridCell marginStart="5px" rowSpan="2" width="30%" id="pt_gc1" halign="start">
+                        <af:panelGroupLayout id="pt_pgl3" halign="left">
+                            <af:image id="pt_i1" source="/Images/Logo.png"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="45%" id="pt_gc2" halign="start">
+                        <af:panelGroupLayout id="pt_pgl4" halign="center"
+                                             inlineStyle="font-size:x-large; margin-left:10px;">
+                            <af:outputText value="#{attrs.PageTitle}" id="pt_ot1"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="pt_gc3" halign="end">
+                        <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
+                            <af:menuBar id="pt_mb2">
+                                <af:menu text="#{sessionScope.userName}" id="pt_m1">
+                                    <af:commandMenuItem text="Logout" id="pt_cmi1"/>
+                                </af:menu>
+                            </af:menuBar>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="20px" height="auto" marginBottom="5px" id="pt_gr2">
+                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="pt_gc4" halign="start">
+                        <af:panelGroupLayout id="pt_pgl5" halign="center">
+                            <af:menuBar id="pt_mb1">
+                                <af:commandMenuItem text="Dashboard" id="pt_cmi2" action="dashboard"/>
+                                <af:spacer width="15" height="10" id="pt_s2"/>
+                                <af:commandMenuItem text="Student Result" id="pt_cmi6" action="studentResult"/>
+                                <af:spacer width="15" height="10" id="pt_s3"/>
+                                <af:menu text="Transaction" id="pt_m2">
+                                    <af:commandMenuItem text="Assign Class to Teacher" id="pt_cmi3"
+                                                        action="classToTeacher"/>
+                                    <af:commandMenuItem text="Assign Student to Class" id="pt_cmi4"
+                                                        action="studentToClass"/>
+                                </af:menu>
+                                <af:spacer width="15" height="10" id="pt_s4"/>
+                                <af:menu text="Search" id="pt_m3">
+                                    <af:commandMenuItem text="Search Teacher" id="pt_cmi5" action="searchTeachers"/>
+                                    <af:commandMenuItem text="Search Student" id="pt_cmi7" action="searchStudents"/>
+                                </af:menu>
+                                <af:spacer width="15" height="10" id="pt_s5"/>
+                                <af:menu text="Lookups" id="pt_m4">
+                                    <af:commandMenuItem text="Classrooms" id="pt_cmi8" action="classrooms"/>
+                                    <af:commandMenuItem text="Teachers" id="pt_cmi9" action="teachers"/>
+                                    <af:commandMenuItem text="Students" id="pt_cmi10" action="students"/>
+                                </af:menu>
+                                <af:spacer width="15" height="10" id="pt_s6"/>
+                            </af:menuBar>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+        <f:facet name="second">
+            <af:decorativeBox theme="dark" id="pt_db2">
+                <f:facet name="center">
+                    <af:decorativeBox theme="medium" id="pt_db1">
+                        <f:facet name="center">
+                            <af:facetRef facetName="BodyFacet"/>
+                        </f:facet>
+                    </af:decorativeBox>
+                </f:facet>
+            </af:decorativeBox>
+        </f:facet>
+    </af:panelSplitter>
+</af:pageTemplateDef>

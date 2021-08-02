@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Classrooms" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/SchoolTemplateDef.jsf" id="pt1">
+                <f:facet name="BodyFacet">
+                    <af:panelGroupLayout id="pgl1" halign="center" layout="vertical">
+                        <af:spacer width="10" height="30" id="s1"/>
+                        <af:panelCollection id="pc1" inlineStyle="width:500px">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="statusbar"/>
+                            <f:facet name="secondaryToolbar">
+                                <af:toolbar id="t2">
+                                    <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                               disabled="#{!bindings.CreateInsert.enabled}" id="b1"
+                                               icon="/Images/Add.png"/>
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Remove"
+                                               disabled="#{!bindings.Delete.enabled}" id="b2"
+                                               icon="/Images/Delete.png"/>
+                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
+                                               icon="/Images/Save.png"/>
+                                    <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                               immediate="true" id="b4" icon="/Images/Cancel.png">
+                                        <af:resetActionListener/>
+                                    </af:button>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="afterToolbar">
+                                <af:toolbar id="t3">
+                                    <af:button text="Export" id="b5" icon="/Images/Excel.png">
+                                        <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
+                                                                           filename="Classrooms.xls"
+                                                                           title="Classrooms"/>
+                                    </af:button>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:table value="#{bindings.ClassroomsView1.collectionModel}" var="row"
+                                      rows="#{bindings.ClassroomsView1.rangeSize}"
+                                      emptyText="#{bindings.ClassroomsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.ClassroomsView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.ClassroomsView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.ClassroomsView1.rangeSize}"
+                                      filterModel="#{bindings.ClassroomsView1Query.queryDescriptor}"
+                                      queryListener="#{bindings.ClassroomsView1Query.processQuery}" filterVisible="true"
+                                      varStatus="vs" id="t1" autoHeightRows="-1"
+                                      partialTriggers=":::b1 :::b2 ::b1 ::b2 ::b3 ::b4"
+                                      inlineStyle="width:500px" columnStretching="last">
+                                <af:column id="c3" width="15" rowHeader="true"/>
+                                <af:column sortProperty="#{bindings.ClassroomsView1.hints.RoomNumber.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ClassroomsView1.hints.RoomNumber.label}" id="c1"
+                                           width="220">
+                                    <af:inputText value="#{row.bindings.RoomNumber.inputValue}"
+                                                  label="#{bindings.ClassroomsView1.hints.RoomNumber.label}"
+                                                  required="#{bindings.ClassroomsView1.hints.RoomNumber.mandatory}"
+                                                  columns="#{bindings.ClassroomsView1.hints.RoomNumber.displayWidth}"
+                                                  maximumLength="#{bindings.ClassroomsView1.hints.RoomNumber.precision}"
+                                                  shortDesc="#{bindings.ClassroomsView1.hints.RoomNumber.tooltip}"
+                                                  id="it1">
+                                        <f:validator binding="#{row.bindings.RoomNumber.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ClassroomsView1.hints.RoomNumber.format}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.ClassroomsView1.hints.GradeNumber.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.ClassroomsView1.hints.GradeNumber.label}" id="c2"
+                                           width="220">
+                                    <af:selectOneChoice value="#{row.bindings.GradeNumber.inputValue}"
+                                                        label="#{row.bindings.GradeNumber.label}"
+                                                        required="#{bindings.ClassroomsView1.hints.GradeNumber.mandatory}"
+                                                        shortDesc="#{bindings.ClassroomsView1.hints.GradeNumber.tooltip}"
+                                                        id="soc1">
+                                        <f:selectItems value="#{row.bindings.GradeNumber.items}" id="si1"/>
+                                        <f:validator binding="#{row.bindings.GradeNumber.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </af:panelGroupLayout>
+                </f:facet>
+                <f:attribute name="PageTitle" value="Classrooms"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
