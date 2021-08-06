@@ -26,13 +26,24 @@
                                                icon="/Images/Add.png"/>
                                     <af:button actionListener="#{bindings.Delete.execute}" text="Remove"
                                                disabled="#{!bindings.Delete.enabled}" id="b2"
-                                               icon="/Images/Delete.png"/>
+                                               icon="/Images/Delete.png">
+                                        <af:showPopupBehavior popupId="p1" triggerType="action"/>
+                                    </af:button>
                                     <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
                                                icon="/Images/Save.png"/>
                                     <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                                immediate="true" id="b4" icon="/Images/Cancel.png">
                                         <af:resetActionListener/>
                                     </af:button>
+                                    <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                              contentDelivery="lazyUncached">
+                                        <af:dialog id="d2" title="Delete Confirmation"
+                                                   affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
+                                                   dialogListener="#{TeacherBean.deleteTeacherDialogListner}">
+                                            <f:facet name="buttonBar"/>
+                                            <af:outputText value="Confirm to delete Teacher Id #{bindings.TeacherId.inputValue}" id="ot1"/>
+                                        </af:dialog>
+                                    </af:popup>
                                 </af:toolbar>
                             </f:facet>
                             <af:table value="#{bindings.TeachersView1.collectionModel}" var="row"

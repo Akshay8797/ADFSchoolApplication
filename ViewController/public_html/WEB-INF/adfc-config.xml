@@ -66,4 +66,14 @@
       <to-activity-id>Dashboard</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>TeacherBean</managed-bean-name>
+    <managed-bean-class>view.bean.TeacherBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>ClassroomBean</managed-bean-name>
+    <managed-bean-class>view.bean.ClassroomBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

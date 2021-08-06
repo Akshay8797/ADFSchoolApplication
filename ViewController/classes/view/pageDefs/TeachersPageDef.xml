@@ -25,5 +25,10 @@
     <action IterBinding="TeachersView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="TeachersView1Iterator" id="TeacherId">
+      <AttrNames>
+        <Item Value="TeacherId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
