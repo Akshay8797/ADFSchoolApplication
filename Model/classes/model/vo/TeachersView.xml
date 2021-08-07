@@ -121,31 +121,79 @@
         ViewAttribute="TeacherId"
         Operator="="
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
       <ViewCriteriaItem
         Name="TeacherName"
         ViewAttribute="TeacherName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
       <ViewCriteriaItem
         Name="TeacherPhone"
         ViewAttribute="TeacherPhone"
         Operator="STARTSWITH"
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
       <ViewCriteriaItem
         Name="TeachersViewCriteria_TeachersViewCriteria_row_0_TeacherAddress"
         ViewAttribute="TeacherAddress"
         Operator="CONTAINS"
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
       <ViewCriteriaItem
         Name="TeacherDateOfBirth"
         ViewAttribute="TeacherDateOfBirth"
         Operator="="
         Conjunction="AND"
-        Required="Optional"/>
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
+      <ViewCriteriaItem
+        Name="TeacherGender"
+        ViewAttribute="TeacherGender"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Required="Optional">
+        <Properties>
+          <SchemaBasedProperties>
+            <DISPLAYWIDTH
+              Value="30"/>
+          </SchemaBasedProperties>
+        </Properties>
+      </ViewCriteriaItem>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor
@@ -157,4 +205,12 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="TeacherId"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="TeacherId"/>
+  </SortCriteria>
 </ViewObject>

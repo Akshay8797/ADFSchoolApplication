@@ -76,4 +76,9 @@
     <managed-bean-class>view.bean.ClassroomBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>StudentBean</managed-bean-name>
+    <managed-bean-class>view.bean.StudentBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

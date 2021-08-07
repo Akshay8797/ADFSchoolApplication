@@ -236,7 +236,7 @@ public class StudentsImpl extends EntityImpl {
      */
     protected void create(AttributeList attributeList) {
         super.create(attributeList);
-        setStudentId(ModelUtil.getSequenceNextVal("SEQ_STUDNET_ID", getDBTransaction()));
+        setStudentId(ModelUtil.getSequenceNextVal("SEQ_STUDENT_ID", getDBTransaction()));
         setStudentGender("M");
         setStudentCreatedDate(ModelUtil.getCurrentDate());
     }

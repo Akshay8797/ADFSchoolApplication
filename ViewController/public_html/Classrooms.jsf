@@ -9,15 +9,12 @@
                     <af:panelGroupLayout id="pgl1" halign="center" layout="vertical">
                         <af:spacer width="10" height="30" id="s1"/>
                         <af:panelCollection id="pc1" inlineStyle="width:500px">
-                            <f:facet name="menus"/>
-                            <f:facet name="toolbar"/>
-                            <f:facet name="statusbar"/>
                             <f:facet name="secondaryToolbar">
                                 <af:toolbar id="t2">
                                     <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
                                                disabled="#{!bindings.CreateInsert.enabled}" id="b1"
                                                icon="/Images/Add.png"/>
-                                    <af:button actionListener="#{bindings.Delete.execute}" text="Remove"
+                                    <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                disabled="#{!bindings.Delete.enabled}" id="b2"
                                                icon="/Images/Delete.png">
                                         <af:showPopupBehavior popupId="p1" triggerType="action"/>
@@ -30,18 +27,19 @@
                                     </af:button>
                                     <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                                               contentDelivery="lazyUncached">
-                                        <af:dialog id="d2" title="Delete Confirmation"
+                                        <af:dialog id="d2" title="Delete Classroom Confirmation"
                                                    affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
                                                    dialogListener="#{ClassroomBean.deleteClassroomDialogListner}">
                                             <f:facet name="buttonBar"/>
-                                            <af:outputText value="Confirm to delete Classroom #{bindings.RoomNumber.inputValue}" id="ot1"/>
+                                            <af:outputText value="Are you sure you want to delete Classroom with Room No. #{bindings.RoomNumber.inputValue}?" id="ot1"/>
                                         </af:dialog>
                                     </af:popup>
                                 </af:toolbar>
                             </f:facet>
                             <f:facet name="afterToolbar">
                                 <af:toolbar id="t3">
-                                    <af:button text="Export" id="b5" icon="/Images/Excel.png">
+                                    <af:button text="Export" id="b5" icon="/Images/Excel.png"
+                                               shortDesc="Export to Excel File">
                                         <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
                                                                            filename="Classrooms.xls"
                                                                            title="Classrooms"/>

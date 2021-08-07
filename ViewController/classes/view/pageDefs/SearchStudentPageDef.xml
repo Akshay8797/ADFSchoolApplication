@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="SearchStudentPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StudentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="StudentsView1Iterator"/>
+    <searchRegion Criteria="SearchStudentsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentsView1Iterator" id="SearchStudentsViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="StudentsView10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGender"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+          <Item Value="StudentParentName"/>
+          <Item Value="StudentParentEmail"/>
+          <Item Value="StudentParentPhone"/>
+          <Item Value="StudentCreatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

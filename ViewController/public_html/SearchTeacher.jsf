@@ -2,9 +2,127 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Search Teacher" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/SchoolTemplateDef.jsf" id="pt1">
-                <f:facet name="BodyFacet"/>
+                <f:facet name="BodyFacet">
+                    <af:spacer width="10" height="30" id="s1"/>
+                    <af:panelGroupLayout layout="vertical" id="pgl1">
+                        <af:panelHeader text="Teachers" id="ph1" styleClass="AFStretchWidth" icon="/Images/Search.png">
+                            <af:panelGroupLayout id="pgl2">
+                                <af:query id="qryId1" headerText="Search" disclosed="true"
+                                          value="#{bindings.SearchTeachersViewCriteriaQuery.queryDescriptor}"
+                                          model="#{bindings.SearchTeachersViewCriteriaQuery.queryModel}"
+                                          queryListener="#{bindings.SearchTeachersViewCriteriaQuery.processQuery}"
+                                          queryOperationListener="#{bindings.SearchTeachersViewCriteriaQuery.processQueryOperation}"
+                                          resultComponentId="::pc1:resId1" rows="2" maxColumns="3"
+                                          saveQueryMode="hidden"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                <af:icon name="info" id="i1"/>
+                                <af:spacer width="5" height="10" id="s2"/>
+                                <af:outputText value="To search by Gender use M or F" id="ot6"/>
+                            </af:panelGroupLayout>
+                        </af:panelHeader>
+                        <af:spacer width="20" height="20" id="s3"/>
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button text="Export" id="b1" icon="/Images/Excel.png"
+                                               shortDesc="Export to Excel File">
+                                        <af:exportCollectionActionListener type="excelHTML" exportedId="resId1"
+                                                                           filename="SearchTeachersResult.xls"
+                                                                           title="SearchTeachersResult"/>
+                                    </af:button>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="secondaryToolbar">
+                                <af:toolbar id="t2">
+                                    <af:panelGroupLayout id="pgl4">
+                                        <af:outputText value="Rows fetched: #{bindings.TeachersView1Iterator.estimatedRowCount}"
+                                                       id="ot7" partialTriggers="::qryId1 resId1"/>
+                                    </af:panelGroupLayout>
+                                </af:toolbar>
+                            </f:facet>
+                            <af:table value="#{bindings.TeachersView1.collectionModel}" var="row"
+                                      rows="#{bindings.TeachersView1.rangeSize}"
+                                      emptyText="#{bindings.TeachersView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.TeachersView1.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.TeachersView1.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.TeachersView1.rangeSize}"
+                                      filterModel="#{bindings.SearchTeachersViewCriteriaQuery.queryDescriptor}"
+                                      queryListener="#{bindings.SearchTeachersViewCriteriaQuery.processQuery}"
+                                      filterVisible="true" varStatus="vs" id="resId1" styleClass="AFStretchWidth"
+                                      columnStretching="column:resId1c4">
+                                <af:column id="c1" width="15" minimumWidth="12" rowHeader="true"/>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherId.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherId.label}" id="resId1c1">
+                                    <af:outputText value="#{row.TeacherId}"
+                                                   shortDesc="#{bindings.TeachersView1.hints.TeacherId.tooltip}"
+                                                   id="ot1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.TeachersView1.hints.TeacherId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherName.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherName.label}" id="resId1c2"
+                                           width="120">
+                                    <af:outputText value="#{row.TeacherName}"
+                                                   shortDesc="#{bindings.TeachersView1.hints.TeacherName.tooltip}"
+                                                   id="ot2"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherPhone.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherPhone.label}" id="resId1c3"
+                                           width="150">
+                                    <af:outputText value="#{row.TeacherPhone}"
+                                                   shortDesc="#{bindings.TeachersView1.hints.TeacherPhone.tooltip}"
+                                                   id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherAddress.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherAddress.label}"
+                                           id="resId1c4" width="150">
+                                    <af:outputText value="#{row.TeacherAddress}"
+                                                   shortDesc="#{bindings.TeachersView1.hints.TeacherAddress.tooltip}"
+                                                   id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherDateOfBirth.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherDateOfBirth.label}"
+                                           id="resId1c5">
+                                    <f:facet name="filter">
+                                        <af:inputDate value="#{bindings.SearchTeachersViewCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.TeacherDateOfBirth.value}"
+                                                      id="id1">
+                                            <af:convertDateTime pattern="#{bindings.TeachersView1.hints.TeacherDateOfBirth.format}"/>
+                                        </af:inputDate>
+                                    </f:facet>
+                                    <af:outputText value="#{row.TeacherDateOfBirth}"
+                                                   shortDesc="#{bindings.TeachersView1.hints.TeacherDateOfBirth.tooltip}"
+                                                   id="ot5">
+                                        <af:convertDateTime pattern="#{bindings.TeachersView1.hints.TeacherDateOfBirth.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.TeachersView1.hints.TeacherGender.name}"
+                                           filterable="true" sortable="true"
+                                           headerText="#{bindings.TeachersView1.hints.TeacherGender.label}"
+                                           id="resId1c6">
+                                    <af:selectOneChoice value="#{row.bindings.TeacherGender.inputValue}"
+                                                        label="#{row.bindings.TeacherGender.label}"
+                                                        required="#{bindings.TeachersView1.hints.TeacherGender.mandatory}"
+                                                        shortDesc="#{bindings.TeachersView1.hints.TeacherGender.tooltip}"
+                                                        readOnly="true" id="soc1">
+                                        <f:selectItems value="#{row.bindings.TeacherGender.items}" id="si1"/>
+                                        <f:validator binding="#{row.bindings.TeacherGender.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </af:panelGroupLayout>
+                </f:facet>
                 <f:attribute name="PageTitle" value="Search Teacher"/>
             </af:pageTemplate>
         </af:form>
