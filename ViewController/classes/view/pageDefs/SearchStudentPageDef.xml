@@ -7,6 +7,16 @@
     <iterator Binds="StudentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="StudentsView1Iterator"/>
     <searchRegion Criteria="SearchStudentsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="StudentsView1Iterator" id="SearchStudentsViewCriteriaQuery"/>
+    <iterator Binds="StudentsSearchView" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentsSearchViewIterator"/>
+    <searchRegion Criteria="SearchStudentsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentsSearchViewIterator" id="SearchStudentsViewCriteriaQuery1"/>
+    <iterator Binds="StudentsSearchResults" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentsSearchResultsIterator"/>
+    <searchRegion Binds="StudentsSearchResultsIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentsSearchResultsQuery"/>
+    <iterator Binds="StudentSearchClass" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentSearchClassIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
@@ -24,5 +34,72 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="StudentsSearchViewIterator" id="StudentsSearchView">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="StudentsSearchView0">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGender"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+          <Item Value="StudentParentName"/>
+          <Item Value="StudentParentEmail"/>
+          <Item Value="StudentParentPhone"/>
+          <Item Value="StudentCreatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StudentsSearchResultsIterator" id="StudentsSearchResults">
+      <nodeDefinition DefName="model.vo.StudentResultView" Name="StudentsSearchResults0">
+        <AttrNames>
+          <Item Value="StudentFk"/>
+          <Item Value="ResultYear"/>
+          <Item Value="GradeNumber"/>
+          <Item Value="FinalResult"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentId">
+      <AttrNames>
+        <Item Value="StudentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentName">
+      <AttrNames>
+        <Item Value="StudentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StudentsSearchViewIterator" StaticList="false" Uses="LOV_StudentGender" id="StudentGender"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentAddress">
+      <AttrNames>
+        <Item Value="StudentAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentParentName">
+      <AttrNames>
+        <Item Value="StudentParentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentParentEmail">
+      <AttrNames>
+        <Item Value="StudentParentEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsSearchViewIterator" id="StudentParentPhone">
+      <AttrNames>
+        <Item Value="StudentParentPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentSearchClassIterator" id="ClassroomFk">
+      <AttrNames>
+        <Item Value="ClassroomFk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentSearchClassIterator" id="TGradeNumber">
+      <AttrNames>
+        <Item Value="TGradeNumber"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

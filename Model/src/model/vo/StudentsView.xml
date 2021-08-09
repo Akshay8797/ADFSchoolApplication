@@ -156,7 +156,7 @@
       <ViewCriteriaItem
         Name="SearchStudentsViewCriteria_StudentsViewCriteria_row_0_StudentGender"
         ViewAttribute="StudentGender"
-        Operator="STARTSWITH"
+        Operator="="
         Conjunction="AND"
         Required="Optional">
         <Properties>
@@ -251,6 +251,19 @@
     ViewLink="model.link.StudentLinkResult"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="StudentClassView"
+    ViewLink="model.link.StudentLinkClass"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="StudentId"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="StudentId"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="StudentId"/>

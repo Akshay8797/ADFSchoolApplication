@@ -184,7 +184,7 @@
       <ViewCriteriaItem
         Name="TeacherGender"
         ViewAttribute="TeacherGender"
-        Operator="STARTSWITH"
+        Operator="="
         Conjunction="AND"
         Required="Optional">
         <Properties>
@@ -205,6 +205,10 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="TeacherId"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="TeacherId"/>

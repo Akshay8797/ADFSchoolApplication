@@ -20,7 +20,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
                     <af:gridCell marginStart="5px" rowSpan="2" width="30%" id="pt_gc1" halign="start">
                         <af:panelGroupLayout id="pt_pgl3" halign="left">
-                            <af:image id="pt_i1" source="/Images/Logo.png"/>
+                            <af:image id="pt_i1" source="/Images/Logo.png" shortDesc="AKs Academy"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="45%" id="pt_gc2" halign="start">

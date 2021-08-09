@@ -4,13 +4,18 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TeachersView1" RangeSize="25" DataControl="AppModuleDataControl" id="TeachersView1Iterator"/>
+    <iterator Binds="TeachersSearchView" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TeachersSearchViewIterator"/>
     <searchRegion Criteria="SearchTeachersViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="TeachersView1Iterator" id="SearchTeachersViewCriteriaQuery"/>
+                  Binds="TeachersSearchViewIterator" id="SearchTeachersViewCriteriaQuery"/>
+    <iterator Binds="TeachersSearchClasses" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TeachersSearchClassesIterator"/>
+    <searchRegion Binds="TeachersSearchClassesIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TeachersSearchClassesQuery"/>
   </executables>
   <bindings>
-    <tree IterBinding="TeachersView1Iterator" id="TeachersView1">
-      <nodeDefinition DefName="model.vo.TeachersView" Name="TeachersView10">
+    <tree IterBinding="TeachersSearchViewIterator" id="TeachersSearchView">
+      <nodeDefinition DefName="model.vo.TeachersView" Name="TeachersSearchView0">
         <AttrNames>
           <Item Value="TeacherId"/>
           <Item Value="TeacherName"/>
@@ -21,5 +26,35 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="TeachersSearchClassesIterator" id="TeachersSearchClasses">
+      <nodeDefinition DefName="model.vo.TeacherClassesView" Name="TeachersSearchClasses0">
+        <AttrNames>
+          <Item Value="TeacherFk"/>
+          <Item Value="ClassroomFk"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="TeachersSearchViewIterator" StaticList="false" Uses="LOV_TeacherGender" id="TeacherGender"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TeachersSearchViewIterator" id="TeacherId">
+      <AttrNames>
+        <Item Value="TeacherId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TeachersSearchViewIterator" id="TeacherName">
+      <AttrNames>
+        <Item Value="TeacherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TeachersSearchViewIterator" id="TeacherPhone">
+      <AttrNames>
+        <Item Value="TeacherPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TeachersSearchViewIterator" id="TeacherAddress">
+      <AttrNames>
+        <Item Value="TeacherAddress"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

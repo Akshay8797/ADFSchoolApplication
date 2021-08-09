@@ -37,6 +37,21 @@
   <ViewUsage
     Name="TeacherClassesView2"
     ViewObjectName="model.vo.TeacherClassesView"/>
+  <ViewUsage
+    Name="StudentsSearchView"
+    ViewObjectName="model.vo.StudentsView"/>
+  <ViewUsage
+    Name="TeachersSearchView"
+    ViewObjectName="model.vo.TeachersView"/>
+  <ViewUsage
+    Name="StudentsSearchResults"
+    ViewObjectName="model.vo.StudentResultView"/>
+  <ViewUsage
+    Name="TeachersSearchClasses"
+    ViewObjectName="model.vo.TeacherClassesView"/>
+  <ViewUsage
+    Name="StudentSearchClass"
+    ViewObjectName="model.vo.StudentClassView"/>
   <ViewLinkUsage
     Name="ClassLinkStudent1"
     ViewLinkObjectName="model.link.ClassLinkStudent"
@@ -54,5 +69,23 @@
     ViewLinkObjectName="model.link.TeacherLinkClasses"
     SrcViewUsageName="model.AppModule.TeachersView1"
     DstViewUsageName="model.AppModule.TeacherClassesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StudentLinkResult2"
+    ViewLinkObjectName="model.link.StudentLinkResult"
+    SrcViewUsageName="model.AppModule.StudentsSearchView"
+    DstViewUsageName="model.AppModule.StudentsSearchResults"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TeacherLinkClasses2"
+    ViewLinkObjectName="model.link.TeacherLinkClasses"
+    SrcViewUsageName="model.AppModule.TeachersSearchView"
+    DstViewUsageName="model.AppModule.TeachersSearchClasses"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StudentLinkClass1"
+    ViewLinkObjectName="model.link.StudentLinkClass"
+    SrcViewUsageName="model.AppModule.StudentsSearchView"
+    DstViewUsageName="model.AppModule.StudentSearchClass"
     Reversed="false"/>
 </AppModule>

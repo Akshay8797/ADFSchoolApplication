@@ -56,8 +56,9 @@
                                       filterModel="#{bindings.ClassroomsView1Query.queryDescriptor}"
                                       queryListener="#{bindings.ClassroomsView1Query.processQuery}" filterVisible="true"
                                       varStatus="vs" id="t1" autoHeightRows="-1"
-                                      partialTriggers=":::b1 :::b2 ::b1 ::b2 ::b3 ::b4"
+                                      partialTriggers="::b1 ::b2 ::b3 ::b4"
                                       inlineStyle="width:500px" columnStretching="last">
+                                <?audit suppress oracle.adf.faces.tableneedsrowheader?>
                                 <af:column id="c3" width="15" rowHeader="true"/>
                                 <af:column sortProperty="#{bindings.ClassroomsView1.hints.RoomNumber.name}"
                                            filterable="true" sortable="true"

@@ -55,7 +55,7 @@
                                       filterModel="#{bindings.StudentsView1Query.queryDescriptor}"
                                       queryListener="#{bindings.StudentsView1Query.processQuery}" filterVisible="true"
                                       varStatus="vs" id="t1" styleClass="AFStretchWidth" columnStretching="column:c4"
-                                      partialTriggers="::b1 ::b2">
+                                      partialTriggers="::b1 ::b2 ::b3 ::b4">
                                 <af:column id="c10" width="15" rowHeader="true"/>
                                 <af:column sortProperty="#{bindings.StudentsView1.hints.StudentId.name}"
                                            filterable="true" sortable="true"
