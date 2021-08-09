@@ -38,7 +38,6 @@
                                         <af:dialog id="d2" title="Delete Student Confirmation"
                                                    affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
                                                    dialogListener="#{StudentBean.deleteStudentDialogListner}">
-                                            <f:facet name="buttonBar"/>
                                             <af:outputText value="Are you sure you want to delete Student with Id #{bindings.StudentId.inputValue}?"
                                                            id="ot1"/>
                                         </af:dialog>

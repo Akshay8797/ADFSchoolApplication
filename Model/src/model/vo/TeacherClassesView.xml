@@ -13,6 +13,29 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="ClassroomsView1"
+    ViewObjectName="model.vo.ClassroomsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LovClassroomView"
+    ListVOName="ClassroomsView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassroomFk"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RoomNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeNumber"/>
+      <Item Value="RoomNumber"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TeacherClasses"
     Entity="model.eo.TeacherClasses"/>
@@ -27,5 +50,13 @@
     PrecisionRule="true"
     EntityAttrName="ClassroomFk"
     EntityUsage="TeacherClasses"
-    AliasName="CLASSROOM_FK"/>
+    AliasName="CLASSROOM_FK"
+    LOVName="LovClassroomView">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="ClassToTeacherPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TeachersView2" RangeSize="25" DataControl="AppModuleDataControl" id="TeachersView2Iterator"/>
+    <searchRegion Binds="TeachersView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TeachersView2Query"/>
+    <iterator Binds="TeacherClassesView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TeacherClassesView3Iterator"/>
+    <searchRegion Binds="TeacherClassesView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TeacherClassesView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TeachersView2Iterator" id="TeachersView2">
+      <nodeDefinition DefName="model.vo.TeachersView" Name="TeachersView20">
+        <AttrNames>
+          <Item Value="TeacherId"/>
+          <Item Value="TeacherName"/>
+          <Item Value="TeacherPhone"/>
+          <Item Value="TeacherAddress"/>
+          <Item Value="TeacherDateOfBirth"/>
+          <Item Value="TeacherGender"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TeacherClassesView3Iterator" id="TeacherClassesView3">
+      <nodeDefinition DefName="model.vo.TeacherClassesView" Name="TeacherClassesView30">
+        <AttrNames>
+          <Item Value="TeacherFk"/>
+          <Item Value="ClassroomFk"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TeacherClassesView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TeacherClassesView3Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>
