@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="StudentToClassPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StudentsView2" RangeSize="25" DataControl="AppModuleDataControl" id="StudentsView2Iterator"/>
+    <searchRegion Binds="StudentsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentsView2Query"/>
+    <iterator Binds="StudentClassView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentClassView3Iterator"/>
+    <searchRegion Binds="StudentClassView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentClassView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StudentsView2Iterator" id="StudentsView2">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="StudentsView20">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGender"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+          <Item Value="StudentParentName"/>
+          <Item Value="StudentParentEmail"/>
+          <Item Value="StudentParentPhone"/>
+          <Item Value="StudentCreatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="StudentClassView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="StudentClassView3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="StudentClassView3Iterator" id="StudentClassView3">
+      <nodeDefinition DefName="model.vo.StudentClassView" Name="StudentClassView30">
+        <AttrNames>
+          <Item Value="StudentFk"/>
+          <Item Value="ClassroomFk"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

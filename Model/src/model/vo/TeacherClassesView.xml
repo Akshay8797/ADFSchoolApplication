@@ -31,8 +31,8 @@
       <Item Value="RoomNumber"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="GradeNumber"/>
       <Item Value="RoomNumber"/>
+      <Item Value="GradeNumber"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

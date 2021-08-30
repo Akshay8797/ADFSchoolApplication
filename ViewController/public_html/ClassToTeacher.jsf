@@ -131,9 +131,9 @@
                                               queryListener="#{bindings.TeacherClassesView3Query.processQuery}"
                                               filterVisible="true" varStatus="vs" id="t2"
                                               partialTriggers="::b1 ::b2 ::b3 ::b4"
-                                              autoHeightRows="-1" columnStretching="column:c7"
+                                              autoHeightRows="-1" columnStretching="last"
                                               styleClass="AFStretchWidth">
-                                        <af:column id="c10" width="15" rowHeader="true"/>
+                                        <af:column id="c10" width="15" rowHeader="true" headerText="Teacher Id"/>
                                         <af:column sortProperty="#{bindings.TeacherClassesView3.hints.TeacherFk.name}"
                                                    filterable="true" sortable="true"
                                                    headerText="#{bindings.TeacherClassesView3.hints.TeacherFk.label}"
@@ -147,7 +147,7 @@
                                         </af:column>
                                         <af:column sortProperty="#{bindings.TeacherClassesView3.hints.ClassroomFk.name}"
                                                    filterable="true" sortable="true"
-                                                   headerText="#{bindings.TeacherClassesView3.hints.ClassroomFk.label}"
+                                                   headerText="Room Number &amp; Grade"
                                                    id="c8" width="140">
                                             <af:selectOneChoice value="#{row.bindings.ClassroomFk.inputValue}"
                                                                 label="#{row.bindings.ClassroomFk.label}"
