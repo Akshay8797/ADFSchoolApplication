@@ -101,13 +101,26 @@
                                                        id="b1" icon="/Images/Add.png"/>
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                        disabled="#{!bindings.Delete.enabled}" id="b2"
-                                                       icon="/Images/Delete.png"/>
+                                                       icon="/Images/Delete.png">
+                                                <af:showPopupBehavior popupId="p1" triggerType="action"/>
+                                            </af:button>
                                             <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
-                                                       icon="/Images/Save.png"/>
+                                                       icon="/Images/Save.png"
+                                                       action="#{StudentToClassBean.saveStudentClassDialogListner}"/>
                                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true"
                                                        id="b4" icon="/Images/Cancel.png">
                                                 <af:resetActionListener/>
                                             </af:button>
+                                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                                      contentDelivery="lazyUncached">
+                                                <af:dialog id="d2" title="Delete Teacher Class Confirmation"
+                                                           affirmativeTextAndAccessKey="Yes"
+                                                           cancelTextAndAccessKey="No"
+                                                           dialogListener="#{StudentToClassBean.deleteStudentClassDialogListner}"
+                                                           type="yesNo">
+                                                    <af:outputText value="Delete Student's Class with Id #{bindings.StudentFk.inputValue} &amp; Room #{bindings.ClassroomFk.inputValue}?" id="ot6"/>
+                                                </af:dialog>
+                                            </af:popup>
                                         </af:toolbar>
                                     </f:facet>
                                     <af:table value="#{bindings.StudentClassView3.collectionModel}" var="row"

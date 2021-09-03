@@ -39,5 +39,15 @@
             Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="TeacherClassesView3Iterator" id="ClassroomFk">
+      <AttrNames>
+        <Item Value="ClassroomFk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TeacherClassesView3Iterator" id="TeacherFk">
+      <AttrNames>
+        <Item Value="TeacherFk"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

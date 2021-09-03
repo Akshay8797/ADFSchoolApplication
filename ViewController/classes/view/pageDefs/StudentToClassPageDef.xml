@@ -41,5 +41,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="StudentClassView3Iterator" id="StudentFk">
+      <AttrNames>
+        <Item Value="StudentFk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentClassView3Iterator" id="ClassroomFk">
+      <AttrNames>
+        <Item Value="ClassroomFk"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

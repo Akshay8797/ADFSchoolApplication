@@ -92,7 +92,7 @@
                             </af:panelHeader>
                         </f:facet>
                         <f:facet name="second">
-                            <af:panelHeader text="Teacher Classes" id="ph2">
+                            <af:panelHeader text="Teacher's Class" id="ph2">
                                 <af:panelCollection id="pc2" styleClass="AFStretchWidth">
                                     <f:facet name="secondaryToolbar">
                                         <af:toolbar id="t3">
@@ -105,16 +105,19 @@
                                                 <af:showPopupBehavior popupId="p1"/>
                                             </af:button>
                                             <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
-                                                       icon="/Images/Save.png"/>
+                                                       icon="/Images/Save.png"
+                                                       action="#{ClassToTeacherBean.saveTeacherClassesDialogListner}"/>
                                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                                        immediate="true" id="b4" icon="/Images/Cancel.png">
                                                 <af:resetActionListener/>
                                             </af:button>
-                                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                                            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                                                      contentDelivery="lazyUncached">
                                                 <af:dialog id="d2" title="Delete Teacher Class Confirmation"
-                                                           type="yesNo"
-                                                           dialogListener="#{TeacherClassesBean.deleteTeacherClassesDialogListner}">
-                                                    <af:outputText value="Are you sure you want to delete the selected row?" id="ot7"/>
+                                                           affirmativeTextAndAccessKey="Yes"
+                                                           cancelTextAndAccessKey="No"
+                                                           dialogListener="#{ClassToTeacherBean.deleteTeacherClassesDialogListner}">
+                                                    <af:outputText value="Delete Teacher's Class with Id #{bindings.TeacherFk.inputValue} &amp; Room #{bindings.ClassroomFk.inputValue}?" id="ot7"/>
                                                 </af:dialog>
                                             </af:popup>
                                         </af:toolbar>
@@ -133,7 +136,7 @@
                                               partialTriggers="::b1 ::b2 ::b3 ::b4"
                                               autoHeightRows="-1" columnStretching="last"
                                               styleClass="AFStretchWidth">
-                                        <af:column id="c10" width="15" rowHeader="true" headerText="Teacher Id"/>
+                                        <af:column id="c10" width="15" rowHeader="true"/>
                                         <af:column sortProperty="#{bindings.TeacherClassesView3.hints.TeacherFk.name}"
                                                    filterable="true" sortable="true"
                                                    headerText="#{bindings.TeacherClassesView3.hints.TeacherFk.label}"
