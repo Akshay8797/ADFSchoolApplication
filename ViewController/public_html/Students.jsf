@@ -25,10 +25,11 @@
                                                icon="/Images/Add.png"/>
                                     <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                disabled="#{!bindings.Delete.enabled}" id="b2" icon="/Images/Delete.png">
-                                        <af:showPopupBehavior popupId="p1"/>
+                                        <af:showPopupBehavior popupId="p1" triggerType="action"/>
                                     </af:button>
                                     <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
-                                               icon="/Images/Save.png"/>
+                                               icon="/Images/Save.png"
+                                               action="#{StudentBean.saveStudentDialogListner}"/>
                                     <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                                immediate="true" id="b4" icon="/Images/Cancel.png">
                                         <af:resetActionListener/>
@@ -38,8 +39,10 @@
                                         <af:dialog id="d2" title="Delete Student Confirmation"
                                                    affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
                                                    dialogListener="#{StudentBean.deleteStudentDialogListner}">
-                                            <af:outputText value="Are you sure you want to delete Student with Id #{bindings.StudentId.inputValue}?"
-                                                           id="ot1"/>
+                                            <af:panelGroupLayout id="pgl2">
+                                                <af:outputText value="Delete Student with Id #{bindings.StudentId.inputValue}?"
+                                                               id="ot1"/>
+                                            </af:panelGroupLayout>
                                         </af:dialog>
                                     </af:popup>
                                 </af:toolbar>

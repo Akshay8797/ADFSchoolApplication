@@ -13,4 +13,9 @@ public class StudentBean {
         AdfUtil.executeOperation("Commit");
         AdfUtil.showSuccessfulMessage("Student Deleted Successfully!");
     }
+
+    public String saveStudentDialogListner() {
+        AdfUtil.showSuccessfulMessage("Data Saved Successfully!");
+        return null;
+    }
 }

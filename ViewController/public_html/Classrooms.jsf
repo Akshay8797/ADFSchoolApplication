@@ -20,7 +20,8 @@
                                         <af:showPopupBehavior popupId="p1" triggerType="action"/>
                                     </af:button>
                                     <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b3"
-                                               icon="/Images/Save.png"/>
+                                               icon="/Images/Save.png"
+                                               action="#{ClassroomBean.saveClassroomDialogListner}"/>
                                     <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                                immediate="true" id="b4" icon="/Images/Cancel.png">
                                         <af:resetActionListener/>
@@ -30,7 +31,10 @@
                                         <af:dialog id="d2" title="Delete Classroom Confirmation"
                                                    affirmativeTextAndAccessKey="Yes" cancelTextAndAccessKey="No"
                                                    dialogListener="#{ClassroomBean.deleteClassroomDialogListner}">
-                                            <af:outputText value="Are you sure you want to delete Classroom with Room No. #{bindings.RoomNumber.inputValue}?" id="ot1"/>
+                                            <af:panelGroupLayout id="pgl2">
+                                                <af:outputText value="Delete Classroom with Room No. #{bindings.RoomNumber.inputValue}?"
+                                                               id="ot1"/>
+                                            </af:panelGroupLayout>
                                         </af:dialog>
                                     </af:popup>
                                 </af:toolbar>

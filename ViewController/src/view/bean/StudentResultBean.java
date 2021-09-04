@@ -4,17 +4,17 @@ import oracle.adf.view.rich.event.DialogEvent;
 
 import view.common.AdfUtil;
 
-public class ClassroomBean {
-    public ClassroomBean() {
+public class StudentResultBean {
+    public StudentResultBean() {
     }
 
-    public void deleteClassroomDialogListner(DialogEvent dialogEvent) {
+    public void deleteStudentResultDialogListner(DialogEvent dialogEvent) {
         AdfUtil.executeOperation("Delete");
         AdfUtil.executeOperation("Commit");
-        AdfUtil.showSuccessfulMessage("Classroom Deleted Successfully!");
+        AdfUtil.showSuccessfulMessage("Student's Result Deleted Successfully!");
     }
 
-    public String saveClassroomDialogListner() {
+    public String saveStudentResultDialogListner() {
         AdfUtil.showSuccessfulMessage("Data Saved Successfully!");
         return null;
     }

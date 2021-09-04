@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.47" id="StudentResultPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ResultStudentsView" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ResultStudentsViewIterator"/>
+    <searchRegion Binds="ResultStudentsViewIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ResultStudentsViewQuery"/>
+    <iterator Binds="ResultStudentResultView" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ResultStudentResultViewIterator"/>
+    <searchRegion Binds="ResultStudentResultViewIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ResultStudentResultViewQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ResultStudentsViewIterator" id="ResultStudentsView">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="ResultStudentsView0">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGender"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ResultStudentResultViewIterator" id="ResultStudentResultView">
+      <nodeDefinition DefName="model.vo.StudentResultView" Name="ResultStudentResultView0">
+        <AttrNames>
+          <Item Value="StudentFk"/>
+          <Item Value="ResultYear"/>
+          <Item Value="GradeNumber"/>
+          <Item Value="FinalResult"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ResultStudentResultViewIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ResultStudentResultViewIterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="ResultStudentResultViewIterator" id="StudentFk">
+      <AttrNames>
+        <Item Value="StudentFk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ResultStudentResultViewIterator" id="GradeNumber">
+      <AttrNames>
+        <Item Value="GradeNumber"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

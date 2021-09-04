@@ -64,6 +64,12 @@
   <ViewUsage
     Name="StudentClassView3"
     ViewObjectName="model.vo.StudentClassView"/>
+  <ViewUsage
+    Name="ResultStudentsView"
+    ViewObjectName="model.vo.StudentsView"/>
+  <ViewUsage
+    Name="ResultStudentResultView"
+    ViewObjectName="model.vo.StudentResultView"/>
   <ViewLinkUsage
     Name="ClassLinkStudent1"
     ViewLinkObjectName="model.link.ClassLinkStudent"
@@ -111,5 +117,11 @@
     ViewLinkObjectName="model.link.StudentLinkClass"
     SrcViewUsageName="model.AppModule.StudentsView2"
     DstViewUsageName="model.AppModule.StudentClassView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StudentLinkResult3"
+    ViewLinkObjectName="model.link.StudentLinkResult"
+    SrcViewUsageName="model.AppModule.ResultStudentsView"
+    DstViewUsageName="model.AppModule.ResultStudentResultView"
     Reversed="false"/>
 </AppModule>

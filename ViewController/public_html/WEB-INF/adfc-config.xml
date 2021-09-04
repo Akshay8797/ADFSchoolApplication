@@ -91,4 +91,9 @@
     <managed-bean-class>view.bean.ClassToTeacherBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>StudentResultBean</managed-bean-name>
+    <managed-bean-class>view.bean.StudentResultBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

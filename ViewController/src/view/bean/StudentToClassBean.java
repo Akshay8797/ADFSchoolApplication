@@ -11,7 +11,7 @@ public class StudentToClassBean {
     public void deleteStudentClassDialogListner(DialogEvent dialogEvent) {
         AdfUtil.executeOperation("Delete");
         AdfUtil.executeOperation("Commit");
-        AdfUtil.showSuccessfulMessage("Student's Class Deleted Successfully");
+        AdfUtil.showSuccessfulMessage("Student's Class Deleted Successfully!");
     }
 
     public String saveStudentClassDialogListner() {
