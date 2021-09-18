@@ -4,12 +4,13 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="SchoolInformation"
-  Version="12.1.3.10.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="SCHOOL_INFORMATION"
   AliasName="SchoolInformation"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="SchoolName"
     Precision="50"
@@ -179,6 +180,29 @@
       <Item Value="model.eo.SchoolInformation.SchoolPrincipalPasword"/>
     </AttrArray>
   </Key>
+  <validation:UniqueKeyValidationBean
+    Name="SchoolInformationRule"
+    ResId="model.eo.SchoolInformation_Rule_0"
+    KeyName="SchoolinformationPrimaryKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="SchoolName"/>
+      <validation:Item
+        Value="SchoolAddress"/>
+      <validation:Item
+        Value="SchoolEmail"/>
+      <validation:Item
+        Value="SchoolPhone"/>
+      <validation:Item
+        Value="SchoolFax"/>
+      <validation:Item
+        Value="SchoolPrincipalName"/>
+      <validation:Item
+        Value="SchoolPrincipalUsername"/>
+      <validation:Item
+        Value="SchoolPrincipalPasword"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

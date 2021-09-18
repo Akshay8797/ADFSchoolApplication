@@ -4,12 +4,13 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="StudentClass"
-  Version="12.1.3.10.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="STUDENT_CLASS"
   AliasName="StudentClass"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="StudentFk"
     ColumnName="STUDENT_FK"
@@ -51,6 +52,17 @@
       <Item Value="model.eo.StudentClass.ClassroomFk"/>
     </AttrArray>
   </Key>
+  <validation:UniqueKeyValidationBean
+    Name="StudentClassRule"
+    ResId="model.eo.StudentClass_Rule_0"
+    KeyName="StudentclassPrimaryKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="StudentFk"/>
+      <validation:Item
+        Value="ClassroomFk"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

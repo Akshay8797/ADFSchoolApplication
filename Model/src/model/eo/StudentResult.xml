@@ -4,12 +4,13 @@
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="StudentResult"
-  Version="12.1.3.10.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="STUDENT_RESULT"
   AliasName="StudentResult"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="StudentFk"
     ColumnName="STUDENT_FK"
@@ -51,8 +52,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="STUDENT_RESULT"
-    PrimaryKey="true">
+    TableName="STUDENT_RESULT">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -70,8 +70,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="STUDENT_RESULT"
-    PrimaryKey="true">
+    TableName="STUDENT_RESULT">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -91,10 +90,19 @@
     <AttrArray Name="Attributes">
       <Item Value="model.eo.StudentResult.StudentFk"/>
       <Item Value="model.eo.StudentResult.ResultYear"/>
-      <Item Value="model.eo.StudentResult.GradeNumber"/>
-      <Item Value="model.eo.StudentResult.FinalResult"/>
     </AttrArray>
   </Key>
+  <validation:UniqueKeyValidationBean
+    Name="StudentResulIdYearRule"
+    ResId="model.eo.StudentResult_Rule_0"
+    KeyName="StudentresultPrimaryKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="StudentFk"/>
+      <validation:Item
+        Value="ResultYear"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

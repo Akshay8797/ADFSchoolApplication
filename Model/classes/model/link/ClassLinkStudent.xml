@@ -4,7 +4,7 @@
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="ClassLinkStudent"
-  Version="12.1.3.10.47"
+  Version="12.2.1.9.14"
   InheritPersonalization="merge">
   <Properties>
     <SchemaBasedProperties>
