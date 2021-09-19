@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RODashboardStatisticsView"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ro.RODashboardStatisticsView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT * FROM          
+(SELECT COUNT(*) AS TOTAL_TEACHERS FROM TEACHERS),         
+(SELECT COUNT(*) AS TOTAL_STUDENTS FROM STUDENTS),         
+(SELECT COUNT(*) AS TOTAL_CLASSES FROM CLASSROOMS),         
+(SELECT COUNT(*) AS TOTAL_GRADE1_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G1'),         
+(SELECT COUNT(*) AS TOTAL_GRADE2_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G2'),         
+(SELECT COUNT(*) AS TOTAL_GRADE3_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G3'),         
+(SELECT COUNT(*) AS TOTAL_GRADE4_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G4'),         
+(SELECT COUNT(*) AS TOTAL_GRADE5_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G5'),         
+(SELECT COUNT(*) AS TOTAL_GRADE6_CLASSES FROM CLASSROOMS WHERE GRADE_NUMBER = 'G6'),         
+(SELECT COUNT(*) AS PASS_STUDENTS FROM STUDENT_RESULT WHERE STUDENT_RESULT.FINAL_RESULT = 'Pass' AND STUDENT_RESULT.RESULT_YEAR =(SELECT (EXTRACT (YEAR FROM SYSDATE) - 1) FROM DUAL)),         
+(SELECT COUNT(*) AS FAIL_STUDENTS FROM STUDENT_RESULT WHERE STUDENT_RESULT.FINAL_RESULT = 'Fail' AND STUDENT_RESULT.RESULT_YEAR =(SELECT (EXTRACT (YEAR FROM SYSDATE) - 1) FROM DUAL))]]></SQLQuery>
+  <ViewAttribute
+    Name="TotalTeachers"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_TEACHERS"
+    Expression="TOTAL_TEACHERS"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalStudents"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_STUDENTS"
+    Expression="TOTAL_STUDENTS"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalClasses"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_CLASSES"
+    Expression="TOTAL_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade1Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE1_CLASSES"
+    Expression="TOTAL_GRADE1_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade2Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE2_CLASSES"
+    Expression="TOTAL_GRADE2_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade3Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE3_CLASSES"
+    Expression="TOTAL_GRADE3_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade4Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE4_CLASSES"
+    Expression="TOTAL_GRADE4_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade5Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE5_CLASSES"
+    Expression="TOTAL_GRADE5_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalGrade6Classes"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_GRADE6_CLASSES"
+    Expression="TOTAL_GRADE6_CLASSES"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PassStudents"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PASS_STUDENTS"
+    Expression="PASS_STUDENTS"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FailStudents"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FAIL_STUDENTS"
+    Expression="FAIL_STUDENTS"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

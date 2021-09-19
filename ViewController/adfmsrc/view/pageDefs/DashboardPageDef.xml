@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="DashboardPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ROTotalStudentsInClass1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ROTotalStudentsInClass1Iterator"/>
+    <iterator Binds="ROTotalTeachersInClass1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ROTotalTeachersInClass1Iterator"/>
+    <iterator Binds="ROAvgPassStudentsView1" RangeSize="1" DataControl="AppModuleDataControl"
+              id="ROAvgPassStudentsView1Iterator"/>
+    <iterator Binds="ROStudentsGradeView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ROStudentsGradeView1Iterator"/>
+    <iterator Binds="RODashboardStatisticsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="RODashboardStatisticsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ROTotalStudentsInClass1Iterator" id="ROTotalStudentsInClass1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.ROTotalStudentsInClass" Name="ROTotalStudentsInClass1">
+        <AttrNames>
+          <Item Value="RoomNo"/>
+          <Item Value="TotalStudents"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ROTotalTeachersInClass1Iterator" id="ROTotalTeachersInClass1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.ROTotalTeachersInClass" Name="ROTotalTeachersInClass1">
+        <AttrNames>
+          <Item Value="TotalTeachers"/>
+          <Item Value="RoomNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ROAvgPassStudentsView1Iterator" id="AvgPass">
+      <AttrNames>
+        <Item Value="AvgPass"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ROStudentsGradeView1Iterator" id="ROStudentsGradeView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.ROStudentsGradeView" Name="ROStudentsGradeView1">
+        <AttrNames>
+          <Item Value="TotalStudents"/>
+          <Item Value="GradeNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalStudents">
+      <AttrNames>
+        <Item Value="TotalStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalTeachers">
+      <AttrNames>
+        <Item Value="TotalTeachers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalClasses">
+      <AttrNames>
+        <Item Value="TotalClasses"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade1Classes">
+      <AttrNames>
+        <Item Value="TotalGrade1Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade2Classes">
+      <AttrNames>
+        <Item Value="TotalGrade2Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade3Classes">
+      <AttrNames>
+        <Item Value="TotalGrade3Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade4Classes">
+      <AttrNames>
+        <Item Value="TotalGrade4Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade5Classes">
+      <AttrNames>
+        <Item Value="TotalGrade5Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="TotalGrade6Classes">
+      <AttrNames>
+        <Item Value="TotalGrade6Classes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="PassStudents">
+      <AttrNames>
+        <Item Value="PassStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="FailStudents">
+      <AttrNames>
+        <Item Value="FailStudents"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

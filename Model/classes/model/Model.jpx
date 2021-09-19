@@ -4,7 +4,7 @@
 <JboProject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Model"
-  Version="12.1.3.10.47"
+  Version="12.2.1.9.14"
   SeparateXMLFiles="true"
   PackageName="model">
   <DesignTime>
@@ -43,6 +43,14 @@
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="ro"
+    PackageName="model.ro"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee
