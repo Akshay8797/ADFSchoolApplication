@@ -5,153 +5,153 @@
       <property
          name="linkStyle">Polyline</property>
       <property
-         name="y">83.5</property>
-      <property
          name="x">88.01758</property>
+      <property
+         name="y">83.5</property>
    </OverallProperties>
    <View
       id="View2">
       <property
          name="activityId">Dashboard</property>
       <property
-         name="page">/Dashboard.jsf</property>
+         name="x">-1286.7981</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Dashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/Dashboard.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-1286.7981</property>
    </View>
    <View
       id="View3">
       <property
          name="activityId">StudentResult</property>
       <property
-         name="page">/StudentResult.jsf</property>
+         name="x">-1138.6075</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>StudentResult&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/StudentResult.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-1138.6075</property>
    </View>
    <View
       id="View4">
       <property
          name="activityId">ClassToTeacher</property>
       <property
-         name="page">/ClassToTeacher.jsf</property>
+         name="x">-976.82135</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>ClassToTeacher&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/ClassToTeacher.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-976.82135</property>
    </View>
    <View
       id="View5">
       <property
          name="activityId">StduentToClass</property>
       <property
-         name="page">/StudentToClass.jsf</property>
+         name="x">-810.0372</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>StduentToClass&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/StudentToClass.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-810.0372</property>
    </View>
    <View
       id="View6">
       <property
          name="activityId">SearchTeacher</property>
       <property
-         name="page">/SearchTeacher.jsf</property>
+         name="x">-646.24725</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>SearchTeacher&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/SearchTeacher.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-646.24725</property>
    </View>
    <View
       id="View7">
       <property
          name="activityId">SearchStudent</property>
       <property
-         name="page">/SearchStudent.jsf</property>
+         name="x">-485.45135</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>SearchStudent&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/SearchStudent.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-485.45135</property>
    </View>
    <View
       id="View8">
       <property
          name="activityId">Classrooms</property>
       <property
-         name="page">/Classrooms.jsf</property>
+         name="x">-334.0841</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Classrooms&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/Classrooms.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-334.08414</property>
    </View>
    <View
       id="View9">
       <property
          name="activityId">Teachers</property>
       <property
-         name="page">/Teachers.jsf</property>
+         name="x">-191.91125</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Teachers&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/Teachers.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-191.9113</property>
    </View>
    <View
       id="View10">
       <property
          name="activityId">Students</property>
       <property
-         name="page">/Students.jsf</property>
+         name="x">-50.911255</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Students&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
+         name="y">-9.270187</property>
+      <property
+         name="page">/Students.jsf</property>
+      <property
          name="exceptionHandler">false</property>
-      <property
-         name="y">-7.86784</property>
-      <property
-         name="x">-50.9113</property>
    </View>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule17">
       <property
          name="activityId">*</property>
       <property
-         name="y">475.2643</property>
-      <property
          name="x">-634.6667</property>
+      <property
+         name="y">475.2643</property>
    </WildcardControlFlowRule>
    <ControlFlowCase
       islink="true"
@@ -242,5 +242,30 @@
          name="fromOutcome">dashboard</property>
       <property
          name="sdm:polyPoints">L50,B50</property>
+   </ControlFlowCase>
+   <View
+      id="View21">
+      <property
+         name="activityId">index</property>
+      <property
+         name="x">-1027.3008</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>index&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">707.3658</property>
+      <property
+         name="page">/index.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="WildcardControlFlowRule17"
+      to="View21">
+      <property
+         name="fromOutcome">index</property>
+      <property
+         name="sdm:polyPoints">L50,R50</property>
    </ControlFlowCase>
 </SDM>

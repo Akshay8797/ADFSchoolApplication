@@ -77,7 +77,7 @@ public class AdfUtil {
     public static Connection getConnection() {
         try {
             InitialContext initialContext = new InitialContext();
-            DataSource ds = (DataSource) initialContext.lookup("schoolDS");
+            DataSource ds = (DataSource) initialContext.lookup("SchoolDS");
             Connection conn = ds.getConnection();
             return conn;
         } catch (Exception e) {
