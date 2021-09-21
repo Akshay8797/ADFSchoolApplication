@@ -5,6 +5,10 @@ import java.sql.PreparedStatement;
 
 import java.sql.ResultSet;
 
+import javax.faces.context.FacesContext;
+
+import javax.servlet.http.HttpSession;
+
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 import view.common.AdfUtil;
@@ -56,6 +60,19 @@ public class LoginBean {
             System.out.println("Exception caught on loginAction()");
         }
         AdfUtil.showErrorMessage("Invalid Credentials!");
+        return null;
+    }
+
+    public String logoutAction() {
+        try {
+            FacesContext context = FacesContext.getCurrentInstance();
+            HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
+            if(session != null)
+                session.invalidate();
+        }
+        catch (Exception e) {
+            System.out.println("Exception occured in logout!");
+        }
         return null;
     }
 }

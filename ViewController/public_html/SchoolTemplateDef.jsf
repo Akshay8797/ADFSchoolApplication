@@ -32,8 +32,8 @@
                     <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="pt_gc3" halign="end">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
                             <af:menuBar id="pt_mb2">
-                                <af:menu text="#{sessionScope.userName}" id="pt_m1">
-                                    <af:commandMenuItem text="Logout" id="pt_cmi1"/>
+                                <af:menu text="#{sessionScope.principalName}" id="pt_m1">
+                                    <af:commandMenuItem text="Logout" id="pt_cmi1" action="#{LoginBean.logoutAction}"/>
                                 </af:menu>
                             </af:menuBar>
                         </af:panelGroupLayout>

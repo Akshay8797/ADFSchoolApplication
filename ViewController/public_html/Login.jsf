@@ -6,7 +6,7 @@
             <af:spacer width="50" height="80" id="s1"/>
             <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="150">
                 <f:facet name="first">
-                    <af:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+                    <af:panelGroupLayout id="pgl1" layout="vertical" halign="center" styleClass="AFStretchWidth">
                         <af:image id="i1" source="/Images/Logo.png" shortDesc="AKs School"/>
                         <af:spacer width="50" height="20" id="s2"/>
                         <af:outputText value="AKs School Management System" id="ot1"
@@ -14,7 +14,7 @@
                     </af:panelGroupLayout>
                 </f:facet>
                 <f:facet name="second">
-                    <af:panelGroupLayout id="pgl2" layout="vertical" halign="center">
+                    <af:panelGroupLayout id="pgl2" layout="vertical" halign="center" styleClass="AFStretchWidth">
                         <af:spacer width="50" height="50" id="s6"/>
                         <af:inputText label="Username" id="it1" required="true"
                                       binding="#{LoginBean.usernameInputText}"/>
@@ -23,7 +23,7 @@
                                       binding="#{LoginBean.passwordInputText}"/>
                         <af:spacer width="50" height="20" id="s4"/>
                         <af:button id="b1" action="#{LoginBean.loginAction}" text="Login"/>
-                        <af:spacer width="50" height="120" id="s5"/>
+                        <af:spacer width="50" height="100" id="s5"/>
                         <af:outputText value="AK Copyright, All rights reserved" id="ot2"/>
                     </af:panelGroupLayout>
                 </f:facet>
