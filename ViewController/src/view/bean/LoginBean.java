@@ -42,8 +42,6 @@ public class LoginBean {
         PreparedStatement statement = null;
         ResultSet result = null;
         Connection conn = null;
-        System.out.println("UserName: " +userName);
-        System.out.println("Password: " +password);
         try {
             String loginCheckQuery =
                 "SELECT SCHOOL_PRINCIPAL_NAME FROM SCHOOL_INFORMATION WHERE SCHOOL_PRINCIPAL_USERNAME = '" +
@@ -64,15 +62,17 @@ public class LoginBean {
     }
 
     public String logoutAction() {
+        System.out.println("Logging Out =====> Bye");
         try {
             FacesContext context = FacesContext.getCurrentInstance();
             HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
-            if(session != null)
+            if(session != null) {
                 session.invalidate();
+            }
         }
         catch (Exception e) {
             System.out.println("Exception occured in logout!");
         }
-        return null;
+        return "index";
     }
 }

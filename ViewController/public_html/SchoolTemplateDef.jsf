@@ -29,10 +29,10 @@
                             <af:outputText value="#{attrs.PageTitle}" id="pt_ot1"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="pt_gc3" halign="end">
+                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="pt_gc3" halign="end" rowSpan="2">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
                             <af:menuBar id="pt_mb2">
-                                <af:menu text="#{sessionScope.principalName}" id="pt_m1">
+                                <af:menu id="pt_m1" text="#{sessionScope.principalName}" icon="/Images/User.png">
                                     <af:commandMenuItem text="Logout" id="pt_cmi1" action="#{LoginBean.logoutAction}"/>
                                 </af:menu>
                             </af:menuBar>
@@ -40,7 +40,7 @@
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="20px" height="auto" marginBottom="5px" id="pt_gr2">
-                    <af:gridCell marginStart="5px" columnSpan="2" marginEnd="5px" id="pt_gc4" halign="start">
+                    <af:gridCell marginStart="5px" marginEnd="5px" id="pt_gc4" halign="start">
                         <af:panelGroupLayout id="pt_pgl5" halign="center">
                             <af:menuBar id="pt_mb1">
                                 <af:commandMenuItem text="Dashboard" id="pt_cmi2" action="dashboard"/>
