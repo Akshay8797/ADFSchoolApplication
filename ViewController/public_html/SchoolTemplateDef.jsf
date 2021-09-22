@@ -18,29 +18,32 @@
         <f:facet name="first">
             <af:panelGridLayout id="pt_pgl1">
                 <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
-                    <af:gridCell marginStart="5px" rowSpan="2" width="30%" id="pt_gc1" halign="start">
+                    <af:gridCell marginStart="5px" rowSpan="2" width="30%" id="pt_gc1">
                         <af:panelGroupLayout id="pt_pgl3" halign="left">
                             <af:image id="pt_i1" source="/Images/Logo.png" shortDesc="AKs Academy"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="45%" id="pt_gc2" halign="start">
+                    <af:gridCell marginStart="5px" width="40%" id="pt_gc2">
                         <af:panelGroupLayout id="pt_pgl4" halign="center"
                                              inlineStyle="font-size:x-large; margin-left:10px;">
                             <af:outputText value="#{attrs.PageTitle}" id="pt_ot1"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="pt_gc3" halign="end" rowSpan="2">
-                        <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
+                    <af:gridCell marginStart="5px" rowSpan="2" width="30%" marginEnd="15px" id="pt_gc3" halign="end">
+                        <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right"
+                                             inlineStyle="margin-top:10px; font-size:large;">
+                            <af:image source="/Images/User.png" shortDesc="User" id="pt_i2"/>
                             <af:menuBar id="pt_mb2">
-                                <af:menu id="pt_m1" text="#{sessionScope.principalName}" icon="/Images/User.png">
-                                    <af:commandMenuItem text="Logout" id="pt_cmi1" action="#{LoginBean.logoutAction}"/>
+                                <af:menu id="pt_m1" text="#{sessionScope.principalName}" inlineStyle="font-size:large;">
+                                    <af:commandMenuItem text="Logout" id="pt_cmi1" action="#{LoginBean.logoutAction}"
+                                                        inlineStyle="font-size:large;"/>
                                 </af:menu>
                             </af:menuBar>
                         </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="20px" height="auto" marginBottom="5px" id="pt_gr2">
-                    <af:gridCell marginStart="5px" marginEnd="5px" id="pt_gc4" halign="start">
+                    <af:gridCell marginStart="5px" width="40%" marginEnd="5px" id="pt_gc4">
                         <af:panelGroupLayout id="pt_pgl5" halign="center">
                             <af:menuBar id="pt_mb1">
                                 <af:commandMenuItem text="Dashboard" id="pt_cmi2" action="dashboard"/>
