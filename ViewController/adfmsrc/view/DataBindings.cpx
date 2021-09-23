@@ -15,6 +15,7 @@
     <page path="/StudentToClass.jsf" usageId="view_StudentToClassPageDef"/>
     <page path="/StudentResult.jsf" usageId="view_StudentResultPageDef"/>
     <page path="/Dashboard.jsf" usageId="view_DashboardPageDef"/>
+    <page path="/SchoolTemplateDef.jsf" usageId="view_SchoolTemplateDefPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_ClassroomsPageDef" path="view.pageDefs.ClassroomsPageDef"/>
@@ -26,6 +27,7 @@
     <page id="view_StudentToClassPageDef" path="view.pageDefs.StudentToClassPageDef"/>
     <page id="view_StudentResultPageDef" path="view.pageDefs.StudentResultPageDef"/>
     <page id="view_DashboardPageDef" path="view.pageDefs.DashboardPageDef"/>
+    <page id="view_SchoolTemplateDefPageDef" path="view.pageDefs.SchoolTemplateDefPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"

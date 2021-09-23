@@ -44,14 +44,16 @@ public class LoginBean {
         Connection conn = null;
         try {
             String loginCheckQuery =
-                "SELECT SCHOOL_PRINCIPAL_NAME FROM SCHOOL_INFORMATION WHERE SCHOOL_PRINCIPAL_USERNAME = '" +
-                userName + "' AND SCHOOL_PRINCIPAL_PASWORD = '" + password + "'";
+                "SELECT SCHOOL_PRINCIPAL_NAME, SCHOOL_NAME, SCHOOL_PHONE FROM SCHOOL_INFORMATION " +
+                "WHERE SCHOOL_PRINCIPAL_USERNAME = '" + userName + "' AND SCHOOL_PRINCIPAL_PASWORD = '" + password + "'";
             conn = AdfUtil.getConnection();
             statement = conn.prepareStatement(loginCheckQuery);
             result = statement.executeQuery();
             if (result.next()) {
                 AdfUtil.putInSessionScope("userName", userName);
                 AdfUtil.putInSessionScope("principalName", result.getString(1));
+                AdfUtil.putInSessionScope("schoolName", result.getString(2));
+                AdfUtil.putInSessionScope("schoolPhone", result.getString(3));
                 return "dashboard";
             }
         } catch (Exception ex) {
@@ -66,11 +68,10 @@ public class LoginBean {
         try {
             FacesContext context = FacesContext.getCurrentInstance();
             HttpSession session = (HttpSession) context.getExternalContext().getSession(true);
-            if(session != null) {
+            if (session != null) {
                 session.invalidate();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Exception occured in logout!");
         }
         return "index";

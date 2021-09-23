@@ -31,15 +31,30 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" rowSpan="2" width="30%" marginEnd="15px" id="pt_gc3" halign="end">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right"
-                                             inlineStyle="margin-top:10px; font-size:large;">
-                            <af:image source="/Images/User.png" shortDesc="User" id="pt_i2"/>
+                                             inlineStyle="margin-top:10px;">
+                            <af:link id="pt_l1" icon="/Images/User.png" shortDesc="User Details">
+                                <af:showPopupBehavior popupId="pt_p1" triggerType="action"/>
+                            </af:link>
                             <af:menuBar id="pt_mb2">
-                                <af:menu id="pt_m1" text="#{sessionScope.principalName}" inlineStyle="font-size:large;">
+                                <af:menu id="pt_m1" text="#{sessionScope.principalName}"
+                                         inlineStyle="font-weight:bold;">
                                     <af:commandMenuItem text="Logout" id="pt_cmi1" action="#{LoginBean.logoutAction}"
-                                                        inlineStyle="font-size:large;"/>
+                                                        inlineStyle="font-weight:bold;"/>
                                 </af:menu>
                             </af:menuBar>
                         </af:panelGroupLayout>
+                        <af:popup childCreation="deferred" autoCancel="disabled" id="pt_p1">
+                            <af:dialog id="pt_d1" title="User Information" type="ok">
+                                <af:panelList id="pt_pl1" maxColumns="1" shortDesc="User Information"
+                                              styleClass="AFStretchWidth"
+                                              inlineStyle="margin-right:25px; margin-bottom:10px; margin-left:10px; margin-top:10px;">
+                                    <af:outputText value="User Name: #{sessionScope.userName}" id="pt_ot2"/>
+                                    <af:outputText value="Principal's Name: #{sessionScope.principalName}" id="pt_ot3"/>
+                                    <af:outputText value="School's Name: #{sessionScope.schoolName}" id="pt_ot4"/>
+                                    <af:outputText value="School's Phone: #{sessionScope.schoolPhone}" id="pt_ot5"/>
+                                </af:panelList>
+                            </af:dialog>
+                        </af:popup>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="20px" height="auto" marginBottom="5px" id="pt_gr2">
