@@ -1,0 +1,32 @@
+INSERT INTO TEACHERS VALUES (301, 'Teacher 1', 7555044612, 'Jharkhand, India', TO_DATE('03/08/1985', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (302, 'Teacher 2', 7555957811, 'Karnataka, India', TO_DATE('02/01/1990', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (303, 'Teacher 3', 7555976687, 'Rajasthan, India', TO_DATE('21/02/1986', 'dd/MM/yyyy'), 'F');
+INSERT INTO TEACHERS VALUES (304, 'Teacher 4', 7555502866, 'Gujrat, India', TO_DATE('26/12/1984', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (305, 'Teacher 5', 7555740736, 'Odisha, India', TO_DATE('13/04/1986', 'dd/MM/yyyy'), 'F');
+INSERT INTO TEACHERS VALUES (306, 'Teacher 6', 9155564050, 'Madhya Pradesh, India', TO_DATE('15/07/1987', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (307, 'Teacher 7', 8555306552, 'Haryana, India', TO_DATE('05/01/1990', 'dd/MM/yyyy'), 'F');
+INSERT INTO TEACHERS VALUES (308, 'Teacher 8', 7555733321, 'Assam, India', TO_DATE('16/06/1988', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (309, 'Teacher 9', 7555068055, 'Chhattisgarh, India', TO_DATE('20/10/1987', 'dd/MM/yyyy'), 'M');
+INSERT INTO TEACHERS VALUES (310, 'Teacher 10', 7555244287, 'Bihar, India', TO_DATE('09/10/1989', 'dd/MM/yyyy'), 'F');
+
+
+INSERT INTO STUDENTS VALUES (101, 'Student 1', 'F', 'Tripura, India', TO_DATE('12/10/2001', 'dd/MM/yyyy'), 'Parent 1', 'parent1@akmail.com', 7555840643, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (102, 'Student 2', 'M', 'Sikkim, India', TO_DATE('05/03/2002', 'dd/MM/yyyy'), 'Parent 2', 'parent2@akmail.com', 8555620420, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (103, 'Student 3', 'M', 'Bihar, India', TO_DATE('02/07/2005', 'dd/MM/yyyy'), 'Parent 3', 'parent3@akmail.com', 7555584049, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (104, 'Student 4', 'F', 'Maharashtra, India', TO_DATE('21/09/2004', 'dd/MM/yyyy'), 'Parent 4', 'parent4@akmail.com', 9555558403, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (105, 'Student 5', 'F', 'Odisha, India', TO_DATE('17/04/2005', 'dd/MM/yyyy'), 'Parent 5', 'parent5@akmail.com', 7555972727, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (106, 'Student 6', 'M', 'West Bengal, India', TO_DATE('20/01/2003', 'dd/MM/yyyy'), 'Parent 6', 'parent6@akmail.com', 7555285134, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (107, 'Student 7', 'M', 'Jharkhand, India', TO_DATE('11/05/2002', 'dd/MM/yyyy'), 'Parent 7', 'parent7@akmail.com', 8555430456, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (108, 'Student 8', 'F', 'Gujrat, India', TO_DATE('19/06/2003', 'dd/MM/yyyy'), 'Parent 8', 'parent8@akmail.com', 8555839292, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (109, 'Student 9', 'F', 'Haryana, India', TO_DATE('09/02/2001', 'dd/MM/yyyy'), 'Parent 9', 'parent9@akmail.com', 7555760370, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+INSERT INTO STUDENTS VALUES (110, 'Student 10', 'M', 'Punjab, India', TO_DATE('25/04/2004', 'dd/MM/yyyy'), 'Parent 10', 'parent10@akmail.com', 9108745362, TO_DATE('07/08/2001', 'dd/MM/yyyy'));
+
+
+INSERT INTO CLASSROOMS VALUES (1, 'G1');
+INSERT INTO CLASSROOMS VALUES (2, 'G2');
+INSERT INTO CLASSROOMS VALUES (3, 'G3');
+INSERT INTO CLASSROOMS VALUES (4, 'G4');
+INSERT INTO CLASSROOMS VALUES (5, 'G5');
+INSERT INTO CLASSROOMS VALUES (6, 'G6');
+INSERT INTO CLASSROOMS VALUES (7, 'G7');
+INSERT INTO CLASSROOMS VALUES (8, 'G8');
